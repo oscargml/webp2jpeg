@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convert WebP images to JPG instantly in your browser. Free, private, mobile-friendly, and easy to use." />
+  <meta name="robots" content="index,follow" />
+  <title>Free WebP to JPG Converter | Fast, Private, Mobile-Friendly</title>
+
+  <!-- Google AdSense site code: keep this in the HEAD -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8643026289824701"
+    crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --panel: #ffffff;
+      --panel-soft: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius: 18px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 28%),
+        linear-gradient(180deg, #eff6ff 0%, #f8fafc 35%, #eef2ff 100%);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: rgba(15, 23, 42, 0.92);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 1.05rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #dbeafe;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover { color: #fff; }
+
+    .hero {
+      padding: 34px 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 32px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 14px; }
+    h1 { font-size: clamp(2rem, 4vw, 3.4rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 16px; color: var(--muted); }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 26px;
+      margin-bottom: 26px;
+    }
+
+    .tool-card {
+      padding: 26px;
+    }
+
+    .dropzone {
+      margin-top: 18px;
+      border: 2px dashed #93c5fd;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+      padding: 28px 20px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .dropzone.dragover {
+      border-color: var(--accent);
+      background: #e0efff;
+      transform: translateY(-1px);
+    }
+
+    .file-input {
+      margin: 14px auto 0;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.2s ease, opacity 0.2s ease;
+    }
+
+    button:hover:not(:disabled) { transform: translateY(-1px); }
+    button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    .primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .primary:hover:not(:disabled) { background: var(--accent-hover); }
+
+    .secondary {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .status {
+      margin-top: 14px;
+      min-height: 24px;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .preview-wrap {
+      display: none;
+      margin-top: 22px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .preview-wrap.show { display: block; }
+
+    .preview-wrap img {
+      max-height: 300px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .help-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sidebar .card {
+      padding: 20px;
+    }
+
+    .ad-slot {
+      min-height: 280px;
+      border: 1px dashed #94a3b8;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .header-ad {
+      margin: 18px auto 26px;
+      min-height: 110px;
+    }
+
+    .mobile-ad {
+      display: none;
+      margin: 24px 0;
+    }
+
+    .section {
+      margin: 22px 0 28px;
+    }
+
+    .content-card {
+      padding: 30px;
+    }
+
+    .content-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(100,116,139,0.24);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-ad {
+        display: block;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body { line-height: 1.55; }
+      .hero { padding-top: 20px; }
+      .hero-copy,
+      .tool-card,
+      .content-card { padding: 22px; }
+      .hero-points { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      button { width: 100%; }
+      .topbar .container { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">ImageConvertHub</div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#converter">Converter</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#about-webp">About WebP</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-copy">
+          <span class="eyebrow">Free browser-based image tool</span>
+          <h1>Convert WebP to JPG in seconds</h1>
+          <p>Upload a WebP image, convert it instantly in your browser, and download a JPG file without sending your image to a server.</p>
+          <p>This layout is designed to feel more trustworthy and monetizable: clearer branding, stronger content, better spacing, and room for ads without placing them too close to the main action.</p>
+          <div class="hero-points">
+            <div class="pill"><strong>Private:</strong> conversion happens in your browser.</div>
+            <div class="pill"><strong>Fast:</strong> ideal for quick compatibility fixes.</div>
+            <div class="pill"><strong>Mobile-friendly:</strong> works well on phones and desktops.</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:22px;">
+          <h3>Recommended monetization setup</h3>
+          <p>Use the site-wide AdSense code in the <code>&lt;head&gt;</code>, then place ad units in reserved sections like the top banner and sidebar/mobile content gap.</p>
+          <ul>
+            <li>Header banner for visibility</li>
+            <li>Sidebar ad on desktop</li>
+            <li>Mid-page ad on mobile</li>
+            <li>Keep ads away from conversion controls</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="card ad-slot header-ad" aria-label="Top advertisement placeholder">
+        Header ad area<br />
+        Replace this placeholder with your AdSense ad unit code.
+      </section>
+
+      <div class="layout">
+        <section id="converter" class="card tool-card">
+          <h2>WebP to JPG Converter</h2>
+          <p>Choose a WebP image below. After previewing it, click the convert button to download a JPG version.</p>
+
+          <div id="dropzone" class="dropzone">
+            <strong>Drag and drop your WebP file here</strong>
+            <div style="margin-top:8px; color:#64748b;">or select it manually</div>
+            <input class="file-input" type="file" id="upload" accept="image/webp,image/*" />
+          </div>
+
+          <div class="preview-wrap" id="previewWrap">
+            <img id="previewImage" alt="Preview of uploaded image" />
+          </div>
+
+          <div class="actions">
+            <button id="convertBtn" class="primary" disabled>Convert &amp; Download JPG</button>
+            <button id="resetBtn" class="secondary" type="button">Reset</button>
+          </div>
+
+          <div id="status" class="status" aria-live="polite"></div>
+
+          <div class="help-note">
+            Tip: JPG does not support transparency. Transparent areas in your WebP image will be filled with a white background in the converted file.
+          </div>
+        </section>
+
+        <aside class="sidebar" aria-label="Sidebar information and ad slot">
+          <div class="card">
+            <h3>Why this version monetizes better</h3>
+            <p>It gives Google and users more context: clearer page purpose, more reading material, FAQs, and a more complete site structure.</p>
+          </div>
+
+          <div class="card ad-slot">
+            Sidebar ad area<br />
+            Add a responsive ad unit here for desktop visitors.
+          </div>
+        </aside>
+      </div>
+
+      <section class="card ad-slot mobile-ad" aria-label="Mobile advertisement placeholder">
+        Mobile ad area<br />
+        Place a responsive ad unit here between the tool and the content.
+      </section>
+
+      <section id="how-it-works" class="section card content-card">
+        <h2>How this tool works</h2>
+        <p>When you upload a WebP image, the page reads the file directly in your browser, draws it onto a hidden canvas, and exports the result as a JPG. Because the conversion happens client-side, you avoid the delay and privacy concerns that come with uploading files to a remote server.</p>
+        <p>This is a useful tool for people who need broader compatibility. While WebP is efficient and modern, JPG is still accepted by many older apps, websites, forms, printers, and workflows. A page like this can attract search traffic if it explains the practical reason for converting rather than only offering a button.</p>
+        <p>For monetization, that matters. A thin utility page often feels incomplete. A page with real explanations, helpful FAQs, visible trust signals, and clean design tends to look more legitimate to both users and ad systems.</p>
+      </section>
+
+      <section id="about-webp" class="section card content-card">
+        <h2>What is WebP, and why convert it to JPG?</h2>
+        <p>WebP is an image format designed to reduce file size while maintaining good visual quality. It is often used on websites because smaller images can help pages load faster. However, not every workflow is optimized for WebP. Some office tools, older software, online forms, and content systems still expect JPG or PNG files.</p>
+        <p>That is where conversion becomes valuable. JPG is one of the most widely supported image formats on the internet. It works across browsers, editing tools, messaging apps, and document systems. If someone receives a WebP file and their application does not accept it, converting to JPG is usually the fastest fix.</p>
+        <p>Another reason people search for this tool is convenience. They do not want to install software, create an account, or upload private images to an unknown server. A simple browser-based converter solves that problem. It is especially useful on mobile devices, where users often need a quick format change before sending an image, attaching it to a form, or posting it somewhere else.</p>
+        <p>For your site, this explanatory section does double duty. It helps visitors understand what the format is, and it gives the page meaningful text content beyond the tool itself. That improves perceived quality and makes the page feel more like a complete resource instead of a placeholder utility.</p>
+      </section>
+
+      <section class="section card content-card">
+        <h2>Best practices for AdSense on a tool page</h2>
+        <ul>
+          <li>Keep the site code in the page head and keep ad unit code in the body where the ad should render.</li>
+          <li>Do not put ads directly next to the upload input, convert button, or download action.</li>
+          <li>Leave enough visual spacing so ads are clearly separate from tool controls.</li>
+          <li>Add useful content sections, FAQs, and navigation so the page feels like a real destination.</li>
+          <li>Use responsive layout so the mobile version remains readable and does not create accidental ad taps.</li>
+        </ul>
+      </section>
+
+      <section id="faq" class="section card content-card">
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Will my image be uploaded to a server?</summary>
+            <p>No. In this version, the conversion happens in the browser using JavaScript and a canvas element.</p>
+          </details>
+          <details>
+            <summary>Why does the JPG version have a white background?</summary>
+            <p>JPG does not support transparency, so transparent areas need to be filled with a solid color. This tool uses white.</p>
+          </details>
+          <details>
+            <summary>Can I monetize a page like this with AdSense?</summary>
+            <p>Yes, but it usually performs better when the page includes original explanatory content, clean navigation, and ad placements that are not too close to the main interactive controls.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© 2026 ImageConvertHub</div>
+      <div>Privacy-friendly browser conversion • Fast • Simple</div>
+    </div>
+  </footer>
+
+  <script>
+    const upload = document.getElementById('upload');
+    const convertBtn = document.getElementById('convertBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const previewWrap = document.getElementById('previewWrap');
+    const previewImage = document.getElementById('previewImage');
+    const statusEl = document.getElementById('status');
+    const dropzone = document.getElementById('dropzone');
+
+    let imageToConvert = null;
+    let originalFileName = 'converted-image';
+
+    function setStatus(message, isError = false) {
+      statusEl.textContent = message;
+      statusEl.style.color = isError ? '#dc2626' : '#16a34a';
+    }
+
+    function resetTool() {
+      upload.value = '';
+      imageToConvert = null;
+      originalFileName = 'converted-image';
+      convertBtn.disabled = true;
+      previewImage.removeAttribute('src');
+      previewWrap.classList.remove('show');
+      setStatus('');
+    }
+
+    function loadFile(file) {
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        setStatus('Please choose an image file.', true);
+        return;
+      }
+
+      originalFileName = file.name.replace(/\.[^.]+$/, '') || 'converted-image';
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        imageToConvert = new Image();
+        imageToConvert.onload = () => {
+          previewImage.src = event.target.result;
+          previewWrap.classList.add('show');
+          convertBtn.disabled = false;
+          setStatus('Image loaded. Ready to convert.');
+        };
+        imageToConvert.onerror = () => {
+          setStatus('Could not read this image. Please try another file.', true);
+        };
+        imageToConvert.src = event.target.result;
+      };
+
+      reader.onerror = () => setStatus('There was a problem reading the file.', true);
+      reader.readAsDataURL(file);
+    }
+
+    upload.addEventListener('change', (e) => {
+      loadFile(e.target.files[0]);
+    });
+
+    ['dragenter', 'dragover'].forEach((eventName) => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach((eventName) => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('dragover');
+      });
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      const file = e.dataTransfer.files[0];
+      loadFile(file);
+    });
+
+    convertBtn.addEventListener('click', () => {
+      if (!imageToConvert) {
+        setStatus('Please upload an image first.', true);
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = imageToConvert.width;
+      canvas.height = imageToConvert.height;
+
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(imageToConvert, 0, 0);
+
+      const link = document.createElement('a');
+      link.download = `${originalFileName}.jpg`;
+      link.href = canvas.toDataURL('image/jpeg', 0.92);
+      link.click();
+
+      setStatus('JPG downloaded successfully.');
+    });
+
+    resetBtn.addEventListener('click', resetTool);
+  </script>
+</body>
+</html>
