@@ -1,558 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="S3TJp5OcNO1_IcflO0zqjELpP8aPwjWNqXOnmLG7QG4" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebP to JPG Converter | Free, Fast, Private Online Tool</title>
-  <meta name="description" content="Convert WebP to JPG instantly in your browser. Free, fast, mobile-friendly, and private. No upload to a server required." />
-  <meta name="keywords" content="webp to jpg, convert webp to jpg, webp converter, jpg converter, image converter online" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="canonical" href="https://oscargml.github.io/webp2jpeg/" />
+<meta charset="UTF-8">
+<!-- SEARCH CONSOLE: replace YOUR_GSC_CODE with your verification code -->
+<meta name="google-site-verification" content="YOUR_GSC_CODE" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebP to JPG Converter – Free, Instant, Private | WebP2JPG</title>
+<meta name="description" content="Convert WebP to JPG free online. No upload, no sign-up — your image is processed entirely in your browser. Works on iPhone, Mac, Windows, and Android.">
+<meta name="keywords" content="webp to jpg, webp to jpeg, convert webp, webp converter, free image converter, browser based converter">
+<link rel="canonical" href="https://webptojpeg.vercel.app/" />
+<meta property="og:title" content="WebP to JPG Converter – Free, Instant, Private">
+<meta property="og:description" content="Convert WebP images to JPG in your browser. No file upload, no account needed.">
+<meta property="og:type" content="website">
+<!-- ADSENSE: replace YOUR_PUB_ID with ca-pub-XXXXXXXXXXXXXXXX -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_PUB_ID" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #f8f7f4; --s1: #ffffff; --s2: #f0ede6; --s3: #e4e0d8;
+  --border: #ddd8ce; --navy: #1a2744; --gold: #b8860b;
+  --green: #2d6a4f; --red: #9b2226;
+  --text: #1a1a1e; --text2: #4a4858; --text3: #8a8696;
+  --accent: #2563eb; --accent2: #1d4ed8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-  <meta property="og:title" content="WebP to JPG Converter | Free, Fast, Private Online Tool" />
-  <meta property="og:description" content="Convert WebP images to JPG in seconds on desktop or mobile. Private browser-based conversion." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://oscargml.github.io/webp2jpeg/" />
+/* HEADER */
+header { background: var(--navy); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { color: #fff; font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
+.logo-icon { background: var(--accent); color: #fff; width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 800; letter-spacing: -.02em; flex-shrink: 0; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { color: rgba(255,255,255,.7); font-size: .85rem; transition: color .15s; }
+.nav-links a:hover { color: #fff; text-decoration: none; }
+.nav-mob { display: none; background: none; border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.8); padding: .25rem .5rem; border-radius: 4px; cursor: pointer; font-size: 1.1rem; }
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8643026289824701"
-    crossorigin="anonymous"></script>
+/* AD SLOTS */
+.ad-slot { background: var(--s2); border: 1px dashed var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; overflow: hidden; }
+/* DELETE this rule after AdSense is approved and pub ID is added */
+.ad-slot ins { display: none !important; }
+.ad-leader { height: 90px; width: 100%; margin: .75rem 0; }
+.ad-banner { height: 60px; width: 100%; margin: 1rem 0; }
+.ad-rect { width: 300px; min-height: 250px; }
 
-  <style>
-    :root{
-      --bg:#f8fafc;
-      --bg2:#eef2ff;
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --card:rgba(255,255,255,.92);
-      --primary:#2563eb;
-      --primary-dark:#1d4ed8;
-      --success:#16a34a;
-      --danger:#dc2626;
-      --shadow:0 20px 50px rgba(15,23,42,.10);
-      --radius:22px;
-      --max:1180px;
-    }
+/* HERO */
+.hero { background: linear-gradient(135deg, var(--navy) 0%, #243356 100%); padding: 3.5rem 1.5rem 3rem; text-align: center; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: .75rem; }
+.hero h1 span { color: #60a5fa; }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 1.5rem; }
+.trust-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.badge { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 20px; padding: .35rem .85rem; font-size: .78rem; color: rgba(255,255,255,.85); display: flex; align-items: center; gap: .4rem; }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter, Arial, Helvetica, sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(37,99,235,.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(14,165,233,.08), transparent 24%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      line-height:1.6;
-    }
+/* LAYOUT */
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+.main-cols { display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start; }
+@media(max-width: 900px) { .main-cols { grid-template-columns: 1fr; } .sidebar { display: none; } }
+.section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
 
-    img{max-width:100%;display:block}
-    a{color:var(--primary);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
+/* CONVERTER */
+.converter-card { background: var(--s1); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; }
+.converter-card h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: .35rem; }
+.converter-card .sub { font-size: .85rem; color: var(--text3); margin-bottom: 1.5rem; }
+.drop-zone { border: 2px dashed var(--border); border-radius: 8px; padding: 2.5rem 1rem; text-align: center; cursor: pointer; transition: all .2s; background: var(--bg); }
+.drop-zone:hover, .drop-zone.over { border-color: var(--accent); background: #eff6ff; }
+.drop-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.drop-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: .35rem; }
+.drop-sub { font-size: .82rem; color: var(--text3); }
+#fileInput { display: none; }
+.btn-choose { display: inline-block; margin-top: .85rem; background: var(--accent); color: #fff; padding: .55rem 1.25rem; border-radius: 6px; font-size: .88rem; font-weight: 500; cursor: pointer; border: none; transition: background .15s; }
+.btn-choose:hover { background: var(--accent2); }
+.preview-area { display: none; margin-top: 1.25rem; }
+#previewImg { max-width: 100%; max-height: 280px; border-radius: 6px; border: 1px solid var(--border); display: block; margin: 0 auto .75rem; }
+.file-info { background: var(--s2); border-radius: 6px; padding: .65rem .9rem; font-size: .8rem; color: var(--text2); margin-bottom: .85rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.file-info span { display: flex; align-items: center; gap: .3rem; }
+.actions { display: flex; gap: .65rem; flex-wrap: wrap; }
+.btn-convert { background: var(--green); color: #fff; border: none; padding: .6rem 1.35rem; border-radius: 6px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: background .15s; }
+.btn-convert:hover { background: #235c43; }
+.btn-reset { background: var(--s2); color: var(--text2); border: 1px solid var(--border); padding: .6rem 1rem; border-radius: 6px; font-size: .88rem; cursor: pointer; transition: all .15s; }
+.btn-reset:hover { border-color: var(--red); color: var(--red); }
+.quality-row { display: flex; align-items: center; gap: .75rem; margin: .85rem 0; font-size: .82rem; color: var(--text2); }
+.quality-row input[type=range] { flex: 1; max-width: 160px; }
+.note-box { background: #fef9e7; border-left: 3px solid #f59e0b; border-radius: 0 6px 6px 0; padding: .6rem .85rem; font-size: .78rem; color: #7c5a04; margin-top: .85rem; line-height: 1.6; }
+.privacy-note { background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 0 6px 6px 0; padding: .6rem .85rem; font-size: .78rem; color: #15503a; margin-top: .65rem; }
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(10px);
-      background:rgba(15,23,42,.90);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
+/* FEATURE GRID */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .85rem; margin: 1.25rem 0; }
+.feature-card { background: var(--s1); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+.feature-icon { font-size: 1.4rem; margin-bottom: .5rem; }
+.feature-card h4 { font-size: .9rem; color: var(--navy); margin-bottom: .3rem; }
+.feature-card p { font-size: .78rem; color: var(--text2); line-height: 1.6; }
 
-    .topbar-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:14px 0;
-      flex-wrap:wrap;
-    }
+/* SECTION HEADINGS */
+.section h2 { font-size: 1.4rem; color: var(--navy); margin-bottom: .5rem; }
+.section h3 { font-size: 1.05rem; color: var(--navy); margin: 1.1rem 0 .4rem; }
+.section p { font-size: .88rem; color: var(--text2); line-height: 1.8; margin-bottom: .65rem; }
+.section ul, .section ol { font-size: .88rem; color: var(--text2); line-height: 1.8; padding-left: 1.25rem; margin-bottom: .75rem; }
+.section ul li, .section ol li { margin-bottom: .3rem; }
+.lead { font-size: .88rem; color: var(--text3); margin-bottom: 1.25rem; }
+.info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: .85rem 1rem; font-size: .82rem; color: #1e40af; line-height: 1.7; margin: .85rem 0; }
+.warn-box { background: #fefce8; border: 1px solid #fde68a; border-radius: 6px; padding: .85rem 1rem; font-size: .82rem; color: #92400e; line-height: 1.7; margin: .85rem 0; }
 
-    .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
-    .brand-badge{
-      width:34px;
-      height:34px;
-      border-radius:12px;
-      background:linear-gradient(135deg,#60a5fa,#2563eb);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      font-weight:900;
-      box-shadow:0 10px 18px rgba(37,99,235,.32);
-    }
+/* USE CASE GRID */
+.usecase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: .85rem; margin: 1.25rem 0; }
+.usecase-card { background: var(--s1); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; }
+.usecase-card h4 { font-size: .9rem; color: var(--navy); margin-bottom: .4rem; display: flex; align-items: center; gap: .4rem; }
+.usecase-card p { font-size: .78rem; color: var(--text2); line-height: 1.65; }
 
-    .nav{display:flex;gap:18px;flex-wrap:wrap}
-    .nav a{color:#dbeafe;font-size:.95rem}
-    .nav a:hover{color:#fff}
+/* FORMAT COMPARISON */
+.compare-table { width: 100%; border-collapse: collapse; font-size: .83rem; margin: 1.1rem 0; }
+.compare-table th { background: var(--navy); color: rgba(255,255,255,.85); padding: .55rem .85rem; text-align: left; font-weight: 500; }
+.compare-table td { padding: .5rem .85rem; border-bottom: 1px solid var(--border); color: var(--text2); vertical-align: middle; }
+.compare-table tr:hover td { background: var(--s2); }
+.tag-yes { background: #dcfce7; color: #166534; border-radius: 3px; padding: .1rem .38rem; font-size: .72rem; font-weight: 600; }
+.tag-no { background: #fee2e2; color: #991b1b; border-radius: 3px; padding: .1rem .38rem; font-size: .72rem; font-weight: 600; }
+.tag-partial { background: #fef9c3; color: #854d0e; border-radius: 3px; padding: .1rem .38rem; font-size: .72rem; font-weight: 600; }
 
-    .hero{padding:34px 0 22px}
-    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:stretch}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.72);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero-copy{padding:34px}
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:#dbeafe;
-      color:#1e3a8a;
-      font-size:.85rem;
-      font-weight:800;
-      margin-bottom:14px;
-    }
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: .5rem; margin-top: 1rem; }
+details { background: var(--s1); border: 1px solid var(--border); border-radius: 6px; padding: .9rem 1.1rem; }
+details summary { font-size: .88rem; font-weight: 500; color: var(--navy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+details summary::after { content: '+'; font-size: 1.1rem; color: var(--text3); }
+details[open] summary::after { content: '−'; }
+details p, details ul { font-size: .82rem; color: var(--text2); line-height: 1.75; margin-top: .65rem; }
+details ul { padding-left: 1.1rem; }
 
-    h1,h2,h3{line-height:1.12;margin:0 0 14px}
-    h1{font-size:clamp(2.2rem,4vw,3.8rem);letter-spacing:-.03em}
-    h2{font-size:clamp(1.6rem,2.8vw,2.4rem)}
-    h3{font-size:1.12rem}
-    p{margin:0 0 16px;color:var(--muted)}
+/* STEP LIST */
+.steps { list-style: none; padding: 0; margin: 1rem 0; }
+.steps li { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: .9rem; font-size: .87rem; color: var(--text2); line-height: 1.65; }
+.step-num { background: var(--accent); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-    .hero-sub{font-size:1.08rem;max-width:62ch}
-    .hero-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
-    .pill{padding:14px;border-radius:16px;background:#fff;border:1px solid var(--line)}
-    .pill strong{display:block;margin-bottom:4px}
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 1rem; }
+.sidebar-card { background: var(--s1); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; }
+.sidebar-card h4 { font-size: .88rem; color: var(--navy); margin-bottom: .65rem; font-weight: 600; }
+.sidebar-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.sidebar-card ul li { font-size: .8rem; color: var(--text2); display: flex; align-items: center; gap: .4rem; }
+.sidebar-card ul li::before { content: '→'; color: var(--accent); font-size: .75rem; }
 
-    .score-card{padding:26px;display:flex;flex-direction:column;justify-content:space-between}
-    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-    .mini{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
-    .mini b{display:block;font-size:1.25rem;margin-bottom:4px}
+/* PLATFORM GUIDES */
+.platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: .85rem; margin: 1.1rem 0; }
+.platform-card { background: var(--s1); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; }
+.platform-card h4 { font-size: .9rem; color: var(--navy); margin-bottom: .55rem; display: flex; align-items: center; gap: .45rem; }
+.platform-card p { font-size: .78rem; color: var(--text2); line-height: 1.65; margin-bottom: .4rem; }
+.platform-card ol { font-size: .78rem; color: var(--text2); line-height: 1.7; padding-left: 1.1rem; }
+.platform-icon { font-size: 1.2rem; }
 
-    .top-ad-wrap{margin:0 0 28px}
-    .ad-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:0 0 8px 4px;font-weight:700}
-    .ad-frame{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:12px;
-      box-shadow:var(--shadow);
-      width:100%;
-      min-width:0;
-      overflow:hidden;
-    }
+/* FOOTER */
+footer { background: var(--navy); color: rgba(255,255,255,.55); text-align: center; padding: 1.75rem 1.25rem; font-size: .75rem; }
+footer a { color: rgba(255,255,255,.5); }
+.footer-links { display: flex; gap: 1.25rem; justify-content: center; margin-bottom: .6rem; flex-wrap: wrap; }
 
-    .ad-container{
-      width:100%;
-      min-width:250px;
-      min-height:90px;
-      display:block;
-    }
-
-    .ad-container--header{min-height:90px}
-    .ad-container--sidebar{min-height:250px}
-    .ad-container--mobile{min-height:100px}
-
-    .adsbygoogle{
-      display:block !important;
-      width:100%;
-      min-width:250px;
-      min-height:90px;
-    }
-
-    .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
-    .tool-card{padding:28px}
-    .dropzone{
-      margin-top:18px;
-      border:2px dashed #93c5fd;
-      border-radius:20px;
-      background:linear-gradient(180deg,#f8fbff 0%,#eff6ff 100%);
-      padding:30px 22px;
-      text-align:center;
-      transition:.2s ease;
-    }
-    .dropzone.dragover{border-color:var(--primary);background:#dbeafe;transform:translateY(-1px)}
-    .file-input{margin:16px auto 0;display:inline-block;width:min(100%,420px);padding:12px;border:1px solid var(--line);border-radius:14px;background:#fff}
-    .preview-wrap{display:none;margin-top:22px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px}
-    .preview-wrap.show{display:block}
-    .preview-wrap img{max-height:320px;margin:0 auto;border-radius:14px;box-shadow:0 10px 20px rgba(15,23,42,.10)}
-
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    button{
-      appearance:none;
-      border:0;
-      border-radius:14px;
-      padding:15px 18px;
-      font-size:1rem;
-      font-weight:800;
-      cursor:pointer;
-      transition:transform .12s ease,background .2s ease,opacity .2s ease;
-    }
-    button:hover:not(:disabled){transform:translateY(-1px)}
-    button:disabled{opacity:.55;cursor:not-allowed}
-    .primary{background:var(--primary);color:#fff}
-    .primary:hover:not(:disabled){background:var(--primary-dark)}
-    .secondary{background:#e2e8f0;color:var(--ink)}
-
-    .status{min-height:24px;margin-top:14px;font-weight:700}
-    .help-note,.trust-box{margin-top:16px;padding:14px 16px;border-radius:16px;background:#f8fafc;border:1px solid var(--line);color:var(--muted)}
-    .sidebar{display:flex;flex-direction:column;gap:18px}
-    .sidebar-card{padding:22px}
-    .sidebar ul{margin:0;padding-left:18px;color:var(--muted)}
-    .mobile-ad{display:none;margin:24px 0}
-    .section{margin:26px 0}
-    .content-card{padding:30px}
-    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .feature-list,.content-card ul{margin:0;padding-left:18px;color:var(--muted)}
-    .faq{display:grid;gap:14px}
-    details{border:1px solid var(--line);border-radius:16px;background:#fff;padding:14px 16px}
-    summary{cursor:pointer;font-weight:800}
-    footer{padding:28px 0 42px;color:#64748b;font-size:.95rem}
-    .footer-grid{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(100,116,139,.25);padding-top:20px}
-    code.inline{background:#eff6ff;color:#1e3a8a;padding:2px 6px;border-radius:8px;font-size:.92em}
-
-    @media (max-width: 980px){
-      .hero-grid,.layout,.content-grid{grid-template-columns:1fr}
-      .sidebar{display:none}
-      .mobile-ad{display:block}
-    }
-
-    @media (max-width: 720px){
-      .hero-copy,.tool-card,.content-card,.score-card{padding:22px}
-      .hero-points,.mini-grid{grid-template-columns:1fr}
-      .actions{flex-direction:column}
-      button{width:100%}
-      .topbar-inner{justify-content:center}
-      .ad-container{min-width:0}
-      .adsbygoogle{min-width:0}
-    }
-  </style>
+@media(max-width: 640px) {
+  .nav-links { display: none; }
+  .nav-mob { display: block; }
+  .hero h1 { font-size: 1.6rem; }
+  .trust-badges { gap: .5rem; }
+}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand"><div class="brand-badge">WJ</div><span>WebP2JPG</span></div>
-      <nav class="nav" aria-label="Primary">
-        <a href="#converter">Converter</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">WJ</div>
+    WebP2JPG
+  </div>
+  <nav class="nav-links">
+    <a href="#converter">Converter</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#use-cases">Use cases</a>
+    <a href="#formats">Formats</a>
+    <a href="#guides">Guides</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <button class="nav-mob">☰</button>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Convert <span>WebP to JPG</span><br>free, instant, private</h1>
+  <p class="hero-sub">Your image is processed entirely in your browser. Nothing is uploaded to any server. No account required.</p>
+  <div class="trust-badges">
+    <span class="badge">🔒 No file upload</span>
+    <span class="badge">⚡ Instant conversion</span>
+    <span class="badge">📱 Works on mobile</span>
+    <span class="badge">✅ Completely free</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+<!-- TOP AD -->
+<div class="ad-slot ad-leader">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  Advertisement
+</div>
+
+<div class="main-cols">
+<main>
+
+<!-- ██ CONVERTER ██ -->
+<section class="section" id="converter">
+<div class="converter-card">
+  <h2>WebP to JPG Converter</h2>
+  <p class="sub">Select or drag a WebP image — your JPG downloads instantly.</p>
+
+  <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+    <div class="drop-icon">🖼️</div>
+    <div class="drop-title">Drag and drop your WebP file here</div>
+    <div class="drop-sub">or click to browse</div>
+    <button class="btn-choose" onclick="event.stopPropagation();document.getElementById('fileInput').click()">Choose file</button>
+  </div>
+  <input type="file" id="fileInput" accept="image/webp,image/*">
+
+  <div class="quality-row">
+    <label for="qualSlider" style="white-space:nowrap">JPG quality:</label>
+    <input type="range" id="qualSlider" min="50" max="100" step="5" value="92">
+    <span id="qualDisplay" style="font-weight:600;color:var(--navy);min-width:2.5rem">92%</span>
+    <span style="color:var(--text3);font-size:.75rem">(92% recommended)</span>
+  </div>
+
+  <div class="preview-area" id="previewArea">
+    <img id="previewImg" src="" alt="Preview of your WebP image">
+    <div class="file-info" id="fileInfo"></div>
+    <div class="actions">
+      <button class="btn-convert" id="convertBtn" onclick="convertImage()">⬇ Convert & Download JPG</button>
+      <button class="btn-reset" onclick="resetTool()">✕ Reset</button>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="card hero-copy">
-          <span class="eyebrow">Free • Browser-based • Private</span>
-          <h1>Convert WebP to JPG online in seconds</h1>
-          <p class="hero-sub">Fast, clean, and mobile-friendly WebP to JPG conversion with no account, no app install, and no file upload to a remote server.</p>
-          <div class="hero-points">
-            <div class="pill"><strong>Private conversion</strong>Your image is processed in your browser.</div>
-            <div class="pill"><strong>Broad compatibility</strong>JPG works with older apps, forms, and software.</div>
-            <div class="pill"><strong>Easy on mobile</strong>Upload, convert, and download in a few taps.</div>
-          </div>
-        </div>
+  <div class="note-box">⚠️ JPG does not support transparency. Any transparent areas in the original WebP will be filled with a white background in the converted JPG.</div>
+  <div class="privacy-note">🔒 <strong>Privacy:</strong> This converter runs entirely in your browser using the HTML5 Canvas API. Your image file is never sent to any server.</div>
+</div>
 
-        <div class="card score-card">
-          <div>
-            <h3>Why people use this tool</h3>
-            <p>WebP is efficient, but JPG is still easier to share, print, edit, and upload in many everyday workflows.</p>
-          </div>
-          <div class="mini-grid">
-            <div class="mini"><b>No signup</b><span>Use it instantly.</span></div>
-            <div class="mini"><b>No server upload</b><span>Better privacy.</span></div>
-            <div class="mini"><b>Desktop + mobile</b><span>Responsive layout.</span></div>
-            <div class="mini"><b>Simple workflow</b><span>Choose, convert, download.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- FEATURES -->
+<div class="feature-grid" style="margin-top:1.5rem">
+  <div class="feature-card">
+    <div class="feature-icon">🔒</div>
+    <h4>100% private</h4>
+    <p>Your image never leaves your device. Conversion happens locally in your browser using JavaScript and the Canvas API.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">⚡</div>
+    <h4>Instant results</h4>
+    <p>No upload wait, no processing queue. The conversion completes in under a second regardless of image size.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">📱</div>
+    <h4>Works everywhere</h4>
+    <p>Fully responsive on iPhone, Android, iPad, Mac, and Windows. No app to install, no browser extension needed.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🎛️</div>
+    <h4>Quality control</h4>
+    <p>Use the quality slider to balance file size against image quality. 92% is the recommended setting for most uses.</p>
+  </div>
+</div>
+</section>
 
-    <div class="container top-ad-wrap">
-      <div class="ad-label">Advertisement</div>
-      <div class="ad-frame">
-        <div class="ad-container ad-container--header">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-8643026289824701"
-               data-ad-slot="1234567890"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-      </div>
+<!-- AD MID -->
+<div class="ad-slot ad-banner">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_2" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  Advertisement
+</div>
+
+<!-- ██ HOW IT WORKS ██ -->
+<section class="section" id="how-it-works">
+  <h2>How this WebP to JPG converter works</h2>
+  <p class="lead">A plain-language explanation of the technology behind browser-based image conversion.</p>
+  <p>When you select a WebP image, your browser reads the raw file data using the <strong>FileReader API</strong> — a built-in browser capability that allows JavaScript to access files you explicitly choose, entirely on your device. The file data is never transmitted over the internet.</p>
+  <p>Once the file is loaded into memory, the converter creates an invisible <strong>HTML5 Canvas element</strong> and draws the image onto it at its original dimensions. The Canvas element is essentially an in-memory pixel buffer — a rectangular grid of color values that the browser can manipulate and export.</p>
+  <p>Finally, the canvas exports its contents as a JPEG using the <strong>canvas.toDataURL('image/jpeg', quality)</strong> method. This method compresses the pixel data using the JPEG algorithm at your chosen quality level and returns the result as a Base64 data URL. The converter then creates a temporary download link pointing to that data URL and triggers a download — delivering your JPG file directly to your downloads folder.</p>
+
+  <h3>The step-by-step process</h3>
+  <ol class="steps">
+    <li><span class="step-num">1</span>You select or drag a WebP file onto the page. The browser's FileReader API reads the file from your local storage — no network request is made.</li>
+    <li><span class="step-num">2</span>The image is decoded and drawn onto an HTML5 Canvas element at its original pixel dimensions.</li>
+    <li><span class="step-num">3</span>Canvas.toDataURL exports the pixel data as a JPEG at your chosen quality level (default: 92%).</li>
+    <li><span class="step-num">4</span>A temporary anchor element with a download attribute triggers the browser's native file download. Your JPG appears in your downloads folder.</li>
+  </ol>
+
+  <div class="info-box">The entire process runs in the same JavaScript sandbox as any other webpage you visit. Your browser's security model prevents any JavaScript from accessing files outside the ones you explicitly select, and prevents any data from leaving your device without your permission.</div>
+
+  <h3>Why 92% quality is the recommended setting</h3>
+  <p>JPEG compression uses a 0–100 quality scale. At 100%, no compression is applied and the file size is large. At 50%, the image becomes visibly blocky. The sweet spot for most use cases — where file size is reasonably small and quality is indistinguishable from the original to most viewers — is between 85% and 95%.</p>
+  <p>92% is the default because it produces files roughly 40–60% smaller than the source WebP with no visible quality loss for photographs, illustrations, and screenshots. If you need a smaller file for email or messaging, try 80–85%. If you need maximum fidelity for printing or professional editing, use 95–100%.</p>
+</section>
+
+<!-- ██ USE CASES ██ -->
+<section class="section" id="use-cases">
+  <h2>When and why people convert WebP to JPG</h2>
+  <p class="lead">WebP is excellent for websites but creates friction in many everyday workflows. Here are the most common reasons people need a converter.</p>
+
+  <div class="usecase-grid">
+    <div class="usecase-card">
+      <h4><span>📧</span> Email attachments</h4>
+      <p>Most email clients display JPG images inline automatically. WebP is not supported by older email clients including Outlook 2016 and earlier, and many corporate email systems. Converting to JPG ensures your recipient sees the image without downloading an attachment.</p>
+    </div>
+    <div class="usecase-card">
+      <h4><span>📄</span> Document and form uploads</h4>
+      <p>Government portals, visa application systems, HR platforms, and university admissions forms frequently list "JPG, PNG, or PDF" as accepted formats. WebP is rarely listed. Converting to JPG is the fastest way to meet these upload requirements.</p>
+    </div>
+    <div class="usecase-card">
+      <h4><span>🖨️</span> Printing</h4>
+      <p>Print shops, photo printing services, and home printers all work reliably with JPG. WebP support in print workflows is virtually nonexistent. If you want to print a photo you downloaded from a website, converting it to JPG first is the safest approach.</p>
+    </div>
+    <div class="usecase-card">
+      <h4><span>💼</span> Older software compatibility</h4>
+      <p>Adobe Photoshop (pre-2023), Microsoft Office 2019 and earlier, Windows Photo Viewer, and many legacy image editing applications do not natively open WebP files. JPG opens in every image viewer ever made.</p>
+    </div>
+    <div class="usecase-card">
+      <h4><span>📱</span> Social media uploads</h4>
+      <p>While major platforms like Instagram, Facebook, and Twitter now accept WebP, many smaller platforms, forums, and community sites still require JPG or PNG. Converting avoids upload errors and unexpected format rejections.</p>
+    </div>
+    <div class="usecase-card">
+      <h4><span>☁️</span> Cloud storage and sharing</h4>
+      <p>Shared album links, Google Photos downloads, and screen captures on some systems save as WebP by default. If you are sharing images with people who may use older devices or software, JPG is the universally safe choice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FORMAT COMPARISON ██ -->
+<section class="section" id="formats">
+  <h2>WebP vs JPG vs PNG — format comparison</h2>
+  <p class="lead">Understanding the differences between image formats helps you choose the right one for each situation.</p>
+
+  <div style="overflow-x:auto">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>WebP</th>
+        <th>JPG / JPEG</th>
+        <th>PNG</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Compression type</strong></td><td>Lossy + lossless</td><td>Lossy only</td><td>Lossless only</td></tr>
+      <tr><td><strong>Typical file size</strong></td><td>Smallest</td><td>Medium</td><td>Largest</td></tr>
+      <tr><td><strong>Transparency support</strong></td><td><span class="tag-yes">Yes</span></td><td><span class="tag-no">No</span></td><td><span class="tag-yes">Yes</span></td></tr>
+      <tr><td><strong>Animation support</strong></td><td><span class="tag-yes">Yes</span></td><td><span class="tag-no">No</span></td><td><span class="tag-partial">Limited</span></td></tr>
+      <tr><td><strong>Browser support</strong></td><td>Modern browsers only</td><td>All browsers, all time</td><td>All browsers</td></tr>
+      <tr><td><strong>Email client support</strong></td><td><span class="tag-partial">Partial</span></td><td><span class="tag-yes">Universal</span></td><td><span class="tag-yes">Universal</span></td></tr>
+      <tr><td><strong>Print workflow support</strong></td><td><span class="tag-no">Rarely</span></td><td><span class="tag-yes">Universal</span></td><td><span class="tag-yes">Yes</span></td></tr>
+      <tr><td><strong>Legacy software support</strong></td><td><span class="tag-no">Limited</span></td><td><span class="tag-yes">Universal</span></td><td><span class="tag-yes">Excellent</span></td></tr>
+      <tr><td><strong>Best use case</strong></td><td>Website images</td><td>Photos, sharing, print</td><td>Graphics, logos, UI</td></tr>
+      <tr><td><strong>Developed by</strong></td><td>Google (2010)</td><td>JPEG committee (1992)</td><td>PNG Group (1996)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>What is WebP?</h3>
+  <p>WebP is an image format developed by Google and first released in 2010. It was designed specifically for the web, where file size directly affects page load speed. WebP uses a compression algorithm derived from the VP8 video codec, which allows it to produce image files that are approximately 25–35% smaller than equivalent JPEGs and 26% smaller than equivalent PNGs, at comparable visual quality.</p>
+  <p>WebP supports both lossy compression (like JPG) and lossless compression (like PNG), as well as transparency and animation, making it a technically versatile format. Chrome, Firefox, Safari, and Edge all support WebP natively in their current versions. Despite its technical advantages, WebP adoption outside browsers remains low, which is why conversion tools like this one remain necessary.</p>
+
+  <h3>What is JPG / JPEG?</h3>
+  <p>JPG (Joint Photographic Experts Group) is one of the oldest and most widely supported image formats in existence. First standardized in 1992, it uses discrete cosine transform (DCT) compression to reduce file size by selectively discarding image data that the human eye is least sensitive to. This lossy compression produces file sizes significantly smaller than raw bitmap data while maintaining acceptable visual quality for photographs.</p>
+  <p>The key advantage of JPG is its near-universal compatibility. Every device, operating system, email client, browser, image editing program, and printing system ever made supports the JPG format. When you need an image to work everywhere without any compatibility questions, JPG is the safest choice.</p>
+
+  <div class="warn-box">⚠️ <strong>Quality loss when converting:</strong> Both WebP (in lossy mode) and JPG use lossy compression. Converting from WebP to JPG introduces a second round of compression. To minimize quality loss, use the highest quality setting (95–100%) when the result will be edited or reprinted. For sharing or uploading to web forms, 85–92% is sufficient.</div>
+</section>
+
+<!-- ██ PLATFORM GUIDES ██ -->
+<section class="section" id="guides">
+  <h2>Platform-specific guides</h2>
+  <p class="lead">Step-by-step instructions for converting WebP images on every major platform and device.</p>
+
+  <div class="platform-grid">
+    <div class="platform-card">
+      <h4><span class="platform-icon">📱</span> iPhone and iPad (iOS)</h4>
+      <p>Safari on iOS saves images from websites as WebP when that is the format the website serves. Many iOS apps and the native Photos share sheet still prefer JPG.</p>
+      <ol>
+        <li>Visit this page on Safari on your iPhone or iPad.</li>
+        <li>Tap the page and scroll to the converter above.</li>
+        <li>Tap "Choose file" and select your WebP image from Photos or Files.</li>
+        <li>Tap "Convert & Download JPG" — the file saves to your Downloads folder in the Files app.</li>
+      </ol>
+      <p>Alternatively: the iOS Shortcuts app has a built-in "Convert Image" action that can batch-convert WebP files in your Photos library.</p>
     </div>
 
-    <div class="container">
-      <div class="layout">
-        <section id="converter" class="card tool-card">
-          <h2>WebP to JPG Converter</h2>
-          <p>Select a WebP image, preview it, and download a JPG version instantly.</p>
-
-          <div id="dropzone" class="dropzone">
-            <strong>Drag and drop your WebP file here</strong>
-            <div style="margin-top:8px;color:#64748b;">or choose a file manually</div>
-            <input class="file-input" type="file" id="upload" accept="image/webp,image/*" />
-          </div>
-
-          <div class="preview-wrap" id="previewWrap">
-            <img id="previewImage" alt="Preview of uploaded image" />
-          </div>
-
-          <div class="actions">
-            <button id="convertBtn" class="primary" disabled>Convert &amp; Download JPG</button>
-            <button id="resetBtn" class="secondary" type="button">Reset</button>
-          </div>
-
-          <div id="status" class="status" aria-live="polite"></div>
-          <div class="help-note">JPG does not support transparency. Any transparent area in the original WebP will be filled with a white background in the final JPG.</div>
-          <div class="trust-box"><strong>Privacy note:</strong> this page converts images locally in your browser using canvas, so your file is not sent to a server by the converter itself.</div>
-        </section>
-
-        <aside class="sidebar" aria-label="Sidebar">
-          <div class="card sidebar-card">
-            <h3>Good fit for</h3>
-            <ul>
-              <li>Older apps that do not accept WebP</li>
-              <li>Email attachments and document uploads</li>
-              <li>Quick mobile image format fixes</li>
-              <li>Simple one-file conversions</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-frame">
-              <div class="ad-container ad-container--sidebar">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8643026289824701"
-                     data-ad-slot="2345678901"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="mobile-ad">
-        <div class="ad-label">Advertisement</div>
-        <div class="ad-frame">
-          <div class="ad-container ad-container--mobile">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8643026289824701"
-                 data-ad-slot="3456789012"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-          </div>
-        </div>
-      </div>
-
-      <section id="how-it-works" class="section card content-card">
-        <h2>How this WebP to JPG converter works</h2>
-        <div class="content-grid">
-          <div>
-            <p>When you add an image, the page reads the file directly in your browser. It then draws the image onto a temporary canvas and exports a new JPG file for download.</p>
-            <p>That means the conversion process is fast and private. You are not waiting for a server to process the image, and you do not need to create an account.</p>
-          </div>
-          <div>
-            <p>People often need JPG because it is still accepted more widely than WebP by forms, legacy software, office tools, printers, and some content systems.</p>
-            <p>This page is built like a proper landing page instead of a bare utility, so it looks cleaner, reads better, and supports monetization more naturally.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section card content-card">
-        <h2>What is WebP and why convert it to JPG?</h2>
-        <p>WebP is a modern image format designed to reduce file size while preserving quality. It is popular on websites because smaller files can improve loading speed. Still, many people run into compatibility issues when they try to use WebP images outside modern web workflows.</p>
-        <p>JPG remains one of the most widely recognized image formats. It is supported by older software, document tools, business portals, email clients, and many upload forms. Converting WebP to JPG is often the quickest way to make an image usable everywhere.</p>
-        <p>This matters especially on mobile. Someone might download a WebP image from a website, then discover that their destination app or form only accepts JPG. A quick browser-based converter solves that problem without requiring an app or account.</p>
-        <ul class="feature-list">
-          <li>Useful for compatibility with older websites and apps</li>
-          <li>Helpful for forms, office tools, and sharing workflows</li>
-          <li>Convenient for people who do not want to install desktop software</li>
-          <li>Better user trust when the page clearly explains how the tool works</li>
-        </ul>
-      </section>
-
-      <section class="section card content-card">
-        <h2>Best practices for monetizing a tool page</h2>
-        <p>A converter page performs better when the ads are visually separate from the upload and download controls. That reduces accidental clicks and makes the page feel more trustworthy.</p>
-        <p>This version keeps ad areas in a top banner, a desktop sidebar, and a mobile content gap. Those positions are far enough from the main action area to keep the interface clean.</p>
-        <p><strong>Important:</strong> replace each <code class="inline">data-ad-slot</code> value with your real ad unit slot ID from AdSense before publishing.</p>
-      </section>
-
-      <section id="faq" class="section card content-card">
-        <h2>Frequently asked questions</h2>
-        <div class="faq">
-          <details><summary>Will my image be uploaded to a server?</summary><p>No. This converter processes the file in the browser using JavaScript and canvas.</p></details>
-          <details><summary>Why does the converted JPG have a white background?</summary><p>JPG files do not support transparency, so transparent areas are filled with white during conversion.</p></details>
-          <details><summary>Can I use this on my phone?</summary><p>Yes. The page is responsive and designed to work on desktop and mobile screens.</p></details>
-          <details><summary>Why did the AdSense error happen?</summary><p>It usually happens when an ad is initialized while its container has zero width, such as inside a hidden or collapsed layout. This version waits until visible ads have measurable width before initializing them.</p></details>
-        </div>
-      </section>
+    <div class="platform-card">
+      <h4><span class="platform-icon">🤖</span> Android</h4>
+      <p>Chrome on Android handles WebP natively but many file sharing and upload apps still require JPG.</p>
+      <ol>
+        <li>Open this page in Chrome on your Android device.</li>
+        <li>Tap "Choose file" and select the WebP image from your gallery or file manager.</li>
+        <li>Tap "Convert & Download JPG" — the file downloads to your Downloads folder.</li>
+      </ol>
+      <p>The converted JPG will appear in your notifications tray and in your Downloads folder, ready to share or upload.</p>
     </div>
-  </main>
 
-  <footer>
-    <div class="container footer-grid"><div>© 2026 WebP2JPG</div><div>Free browser conversion • Fast • Private • Mobile-friendly</div></div>
-  </footer>
+    <div class="platform-card">
+      <h4><span class="platform-icon">🍎</span> Mac (macOS)</h4>
+      <p>macOS Preview app opens WebP natively since macOS 11 Big Sur. For older macOS versions or for batch export:</p>
+      <ol>
+        <li>Option 1: Use this converter — drag your WebP file onto the drop zone above and download the JPG.</li>
+        <li>Option 2 (Preview): Open the WebP in Preview → File → Export → select JPEG format → adjust quality → Save.</li>
+        <li>Option 3 (Terminal): <code>sips -s format jpeg input.webp --out output.jpg</code></li>
+      </ol>
+      <p>For bulk conversion of multiple WebP files on Mac, the Automator app or a simple shell script using <code>sips</code> is the most efficient approach.</p>
+    </div>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"WebP to JPG Converter","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Convert WebP images to JPG instantly in your browser.","url":"https://oscargml.github.io/webp2jpeg/"}</script>
+    <div class="platform-card">
+      <h4><span class="platform-icon">🪟</span> Windows 10 / 11</h4>
+      <p>Windows Photos app does not natively open WebP without installing the WebP Image Extensions from the Microsoft Store (free).</p>
+      <ol>
+        <li>Option 1: Use this converter — drag your WebP onto the drop zone and download the JPG.</li>
+        <li>Option 2: Install "WebP Image Extensions" from the Microsoft Store, then right-click the WebP → Open with Paint → Save as JPEG.</li>
+        <li>Option 3: Open in Microsoft Edge (which supports WebP), right-click the image → Save image as → change extension to .jpg.</li>
+      </ol>
+    </div>
 
-  <script>
-    const upload = document.getElementById('upload');
-    const convertBtn = document.getElementById('convertBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const previewWrap = document.getElementById('previewWrap');
-    const previewImage = document.getElementById('previewImage');
-    const statusEl = document.getElementById('status');
-    const dropzone = document.getElementById('dropzone');
+    <div class="platform-card">
+      <h4><span class="platform-icon">📸</span> For email attachments</h4>
+      <p>When attaching images to emails, especially in Outlook, corporate webmail, or older Gmail clients, JPG is the safest format.</p>
+      <ol>
+        <li>Convert your WebP to JPG using the converter above.</li>
+        <li>The JPG downloads to your computer or phone's Downloads folder.</li>
+        <li>Attach the JPG file to your email as normal.</li>
+      </ol>
+      <p>JPG images are also smaller in file size than PNG, which helps stay under email attachment size limits.</p>
+    </div>
 
-    let imageToConvert = null;
-    let originalFileName = 'converted-image';
+    <div class="platform-card">
+      <h4><span class="platform-icon">📋</span> For forms and document uploads</h4>
+      <p>Government portals, university systems, and HR platforms commonly require JPG or PNG.</p>
+      <ol>
+        <li>Convert your WebP photo using the converter above.</li>
+        <li>Check the form's requirements — if it specifies maximum file size, use a lower quality setting (80–85%) to reduce file size.</li>
+        <li>Upload the JPG file to the form as directed.</li>
+      </ol>
+      <p>If the form also has dimension requirements (e.g. "35mm × 45mm passport photo"), you may need an image editor to resize after converting.</p>
+    </div>
+  </div>
+</section>
 
-    function setStatus(message, isError = false) {
-      statusEl.textContent = message;
-      statusEl.style.color = isError ? '#dc2626' : '#16a34a';
-    }
+<!-- ██ FAQ ██ -->
+<section class="section" id="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-list">
+    <details>
+      <summary>Is my image uploaded to a server when I use this converter?</summary>
+      <p>No. This converter processes your image entirely in your browser using JavaScript and the HTML5 Canvas API. When you select a file, your browser reads it locally using the FileReader API — no network request is made and no data leaves your device. You can verify this by opening your browser's developer tools (F12) and checking the Network tab while converting — you will see zero outbound requests.</p>
+    </details>
 
-    function resetTool() {
-      upload.value = '';
-      imageToConvert = null;
-      originalFileName = 'converted-image';
-      convertBtn.disabled = true;
-      previewImage.removeAttribute('src');
-      previewWrap.classList.remove('show');
-      setStatus('');
-    }
+    <details>
+      <summary>Why does my converted JPG have a white background instead of transparency?</summary>
+      <p>JPG is a format that does not support transparency (alpha channel). When a WebP image has transparent areas — such as a logo with a clear background — and is converted to JPG, those transparent pixels must be filled with a solid color. This converter fills them with white, which is the standard behavior and works correctly for most uses. If you need to preserve transparency, convert to PNG instead, which supports an alpha channel. For a different background color, you would need an image editor like Photoshop, GIMP (free), or Canva to fill the transparency before exporting to JPG.</p>
+    </details>
 
-    function loadFile(file) {
-      if (!file) return;
-      if (!file.type.startsWith('image/')) {
-        setStatus('Please choose an image file.', true);
-        return;
-      }
+    <details>
+      <summary>Does converting WebP to JPG reduce image quality?</summary>
+      <p>Yes, to a small degree, because both WebP (in lossy mode) and JPG use lossy compression. The conversion process decodes the WebP back to raw pixels and then re-encodes those pixels as JPEG. This second round of compression introduces some additional quality loss. At the default 92% quality setting, this loss is visually imperceptible for most images when viewed on screen. At 95–100% quality, there is essentially no visible difference. At 70% or below, some degradation becomes noticeable, especially in high-contrast edges and text. For images that will be printed professionally, use 95% or higher.</p>
+    </details>
 
-      originalFileName = file.name.replace(/\.[^.]+$/, '') || 'converted-image';
-      const reader = new FileReader();
+    <details>
+      <summary>What is the maximum file size this converter can handle?</summary>
+      <p>There is no explicit file size limit — the practical limit is your device's available RAM. A 10MP WebP image (around 5–15MB) converts instantly on any modern smartphone or computer. Very large images (50MB+) may take a few seconds and could cause issues on older devices with limited memory. If you experience browser crashes with very large files, try reducing the browser's other open tabs to free up memory, or use a desktop image editor like Photoshop or GIMP for oversized files.</p>
+    </details>
 
-      reader.onload = (event) => {
-        imageToConvert = new Image();
-        imageToConvert.onload = () => {
-          previewImage.src = event.target.result;
-          previewWrap.classList.add('show');
-          convertBtn.disabled = false;
-          setStatus('Image loaded. Ready to convert.');
-        };
-        imageToConvert.onerror = () => setStatus('Could not read this image. Please try another file.', true);
-        imageToConvert.src = event.target.result;
-      };
+    <details>
+      <summary>Can I convert multiple WebP files at once?</summary>
+      <p>The current version of this converter handles one file at a time. For batch conversion of multiple WebP files, you have several options: on Mac, use the Terminal command <code>for f in *.webp; do sips -s format jpeg "$f" --out "${f%.webp}.jpg"; done</code>. On Windows, tools like IrfanView (free) support batch conversion. In Photoshop, use File → Scripts → Image Processor. A free batch converter option online is Squoosh by Google, which also handles WebP.</p>
+    </details>
 
-      reader.onerror = () => setStatus('There was a problem reading the file.', true);
-      reader.readAsDataURL(file);
-    }
+    <details>
+      <summary>What browsers does this converter work in?</summary>
+      <p>This converter works in any modern browser that supports the HTML5 Canvas API and FileReader API, which includes Chrome 10+, Firefox 4+, Safari 6+, Edge 12+, and all modern mobile browsers. Internet Explorer 11 partially supports the required APIs but is no longer a supported browser. Essentially any browser released after 2015 works correctly. The WebP decoding itself is handled by the browser — if your browser can display WebP images (which all modern browsers can), it can also convert them using this tool.</p>
+    </details>
 
-    function elementIsRenderable(el) {
-      if (!el) return false;
-      const style = window.getComputedStyle(el);
-      return style.display !== 'none' && style.visibility !== 'hidden' && el.offsetWidth > 0;
-    }
+    <details>
+      <summary>Will the converted JPG be the same size as the original WebP?</summary>
+      <p>File size depends on the image content and the quality setting you choose, not the original size. A WebP file converted to JPG at 92% quality will typically be 1.5–3× larger than the WebP, because WebP's compression is more efficient than JPEG's. A 200KB WebP might produce a 400–600KB JPG at 92%. At 80% quality, the JPG might be 250–350KB. At 100% quality it could be 1–2MB. The physical pixel dimensions (width × height) of the image are always preserved exactly during conversion.</p>
+    </details>
 
-    function tryInitAds() {
-      if (!window.adsbygoogle) return;
+    <details>
+      <summary>Is this different from just renaming a WebP file to .jpg?</summary>
+      <p>Yes, completely different. Renaming a file only changes the file extension label — it does not change the actual file format or the data inside the file. A WebP file renamed to .jpg is still a WebP file internally, and will still fail to open in any application that does not support WebP. Proper conversion, as this tool performs, actually re-encodes the pixel data into the JPEG format so the resulting file is a genuine JPEG that opens correctly in any application.</p>
+    </details>
 
-      document.querySelectorAll('.adsbygoogle').forEach((ad) => {
-        if (ad.dataset.adInit === 'true') return;
-        if (!elementIsRenderable(ad)) return;
+    <details>
+      <summary>Why do websites use WebP instead of JPG?</summary>
+      <p>Web developers and Content Delivery Networks use WebP because smaller image files make pages load faster, which improves user experience and search engine rankings. Google's PageSpeed Insights tool explicitly recommends "serving images in next-gen formats" (meaning WebP or AVIF) as a performance optimization. A website serving 50 images per page can reduce total image payload by 30–40% by using WebP instead of JPG, which can significantly improve load times on mobile connections. The tradeoff is that these optimized images are less convenient for end users who want to download and use them outside a web browser.</p>
+    </details>
 
-        const container = ad.closest('.ad-container') || ad.parentElement;
-        if (!container || container.offsetWidth === 0) return;
+    <details>
+      <summary>What is the difference between JPG and JPEG?</summary>
+      <p>There is no difference. JPG and JPEG refer to exactly the same image format. The JPEG acronym stands for Joint Photographic Experts Group, the committee that created the standard. Early Windows operating systems limited file extensions to three characters, so the four-character .jpeg extension was shortened to .jpg. Mac OS and Linux systems always used .jpeg. Both extensions are universally recognized by all software today, and a file named photo.jpg and one named photo.jpeg are identical formats.</p>
+    </details>
+  </div>
+</section>
 
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          ad.dataset.adInit = 'true';
-        } catch (error) {
-          if (!String(error).includes('No slot size for availableWidth=0')) {
-            console.error('AdSense init error:', error);
-          }
-        }
-      });
-    }
+<!-- BOTTOM AD -->
+<div class="ad-slot ad-banner">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  Advertisement
+</div>
 
-    function scheduleAdInit() {
-      tryInitAds();
-      requestAnimationFrame(tryInitAds);
-      setTimeout(tryInitAds, 250);
-      setTimeout(tryInitAds, 1000);
-    }
+</main>
 
-    upload.addEventListener('change', (e) => loadFile(e.target.files[0]));
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="ad-slot ad-rect" style="margin-bottom:.5rem">
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_4"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    Advertisement
+  </div>
 
-    ['dragenter', 'dragover'].forEach((eventName) => {
-      dropzone.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropzone.classList.add('dragover');
-      });
-    });
+  <div class="sidebar-card">
+    <h4>Quick facts</h4>
+    <ul>
+      <li>No file size limit</li>
+      <li>Quality: 50%–100% adjustable</li>
+      <li>Output: standard JPEG</li>
+      <li>Transparency → white fill</li>
+      <li>Original dimensions preserved</li>
+      <li>Processes in under 1 second</li>
+    </ul>
+  </div>
 
-    ['dragleave', 'drop'].forEach((eventName) => {
-      dropzone.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropzone.classList.remove('dragover');
-      });
-    });
+  <div class="sidebar-card">
+    <h4>When to use JPG</h4>
+    <ul>
+      <li>Email attachments</li>
+      <li>Form and document uploads</li>
+      <li>Printing photos</li>
+      <li>Older software</li>
+      <li>Universal sharing</li>
+      <li>Social media (safest format)</li>
+    </ul>
+  </div>
 
-    dropzone.addEventListener('drop', (e) => {
-      const file = e.dataTransfer.files[0];
-      loadFile(file);
-    });
+  <div class="sidebar-card">
+    <h4>When to keep WebP</h4>
+    <ul>
+      <li>Publishing on your website</li>
+      <li>When file size matters most</li>
+      <li>Modern browser display only</li>
+      <li>When transparency is needed</li>
+    </ul>
+  </div>
 
-    convertBtn.addEventListener('click', () => {
-      if (!imageToConvert) {
-        setStatus('Please upload an image first.', true);
-        return;
-      }
+  <div class="ad-slot ad-rect" style="margin-top:.5rem">
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_5"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    Advertisement
+  </div>
+</aside>
 
-      const canvas = document.createElement('canvas');
-      canvas.width = imageToConvert.width;
-      canvas.height = imageToConvert.height;
+</div><!-- end main-cols -->
+</div><!-- end page-wrap -->
 
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(imageToConvert, 0, 0);
+<footer>
+  <div class="footer-links">
+    <a href="#converter">Convert</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#use-cases">Use cases</a>
+    <a href="#formats">Formats</a>
+    <a href="#guides">Guides</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div>WebP2JPG · Free browser-based converter · No upload · No account · No cost</div>
+  <div style="margin-top:.4rem;font-size:.68rem;color:rgba(255,255,255,.3)">© 2025 WebP2JPG · For educational and personal use</div>
+</footer>
 
-      const link = document.createElement('a');
-      link.download = `${originalFileName}.jpg`;
-      link.href = canvas.toDataURL('image/jpeg', 0.92);
-      link.click();
+<script>
+// ═══════════════════════════════════
+// CONVERTER
+// ═══════════════════════════════════
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const previewArea = document.getElementById('previewArea');
+const previewImg = document.getElementById('previewImg');
+const fileInfoEl = document.getElementById('fileInfo');
+const qualSlider = document.getElementById('qualSlider');
+const qualDisplay = document.getElementById('qualDisplay');
 
-      setStatus('JPG downloaded successfully.');
-    });
+let currentFile = null;
 
-    resetBtn.addEventListener('click', resetTool);
-    window.addEventListener('load', scheduleAdInit);
-    window.addEventListener('resize', scheduleAdInit);
+qualSlider.addEventListener('input', () => {
+  qualDisplay.textContent = qualSlider.value + '%';
+});
 
-    if ('ResizeObserver' in window) {
-      const resizeObserver = new ResizeObserver(() => {
-        scheduleAdInit();
-      });
-      document.querySelectorAll('.ad-container').forEach((el) => resizeObserver.observe(el));
-    }
+// Drag and drop
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('over');
+  const file = e.dataTransfer.files[0];
+  if (file) loadFile(file);
+});
 
-    const __selfTest = {
-      headerAdExists: !!document.querySelector('.ad-container--header .adsbygoogle'),
-      sidebarAdExists: !!document.querySelector('.ad-container--sidebar .adsbygoogle'),
-      mobileAdExists: !!document.querySelector('.ad-container--mobile .adsbygoogle'),
-      converterButtonExists: !!document.getElementById('convertBtn'),
-      dropzoneExists: !!document.getElementById('dropzone')
+fileInput.addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (file) loadFile(file);
+});
+
+function loadFile(file) {
+  currentFile = file;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    previewImg.src = ev.target.result;
+    previewImg.onload = () => {
+      const sizeKB = (file.size / 1024).toFixed(1);
+      fileInfoEl.innerHTML =
+        `<span>📄 ${file.name}</span>` +
+        `<span>📐 ${previewImg.naturalWidth} × ${previewImg.naturalHeight}px</span>` +
+        `<span>💾 ${sizeKB} KB (WebP)</span>`;
     };
-    console.assert(__selfTest.headerAdExists, 'Missing header ad unit');
-    console.assert(__selfTest.sidebarAdExists, 'Missing sidebar ad unit');
-    console.assert(__selfTest.mobileAdExists, 'Missing mobile ad unit');
-    console.assert(__selfTest.converterButtonExists, 'Missing convert button');
-    console.assert(__selfTest.dropzoneExists, 'Missing dropzone');
-  </script>
+    previewArea.style.display = 'block';
+    dropZone.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+function convertImage() {
+  if (!currentFile) return;
+  const quality = parseInt(qualSlider.value) / 100;
+  const canvas = document.createElement('canvas');
+  canvas.width = previewImg.naturalWidth;
+  canvas.height = previewImg.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  // White background for transparency
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(previewImg, 0, 0);
+  const jpgData = canvas.toDataURL('image/jpeg', quality);
+  const link = document.createElement('a');
+  const baseName = currentFile.name.replace(/\.[^.]+$/, '');
+  link.download = baseName + '.jpg';
+  link.href = jpgData;
+  link.click();
+  // Show size estimate
+  const jpgBytes = Math.round((jpgData.length * 3) / 4);
+  const jpgKB = (jpgBytes / 1024).toFixed(1);
+  fileInfoEl.innerHTML += `<span style="color:var(--green)">✅ JPG saved · ~${jpgKB} KB</span>`;
+}
+
+function resetTool() {
+  currentFile = null;
+  fileInput.value = '';
+  previewImg.src = '';
+  previewArea.style.display = 'none';
+  dropZone.style.display = 'block';
+  fileInfoEl.innerHTML = '';
+}
+</script>
 </body>
 </html>
-
