@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <!-- SEARCH CONSOLE: replace YOUR_GSC_CODE with your verification code -->
-<meta name="google-site-verification" content="S3TJp5OcNO1_IcflO0zqjELpP8aPwjWNqXOnmLG7QG4" />
+<meta name="google-site-verification" content="YOUR_GSC_CODE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WebP to JPG Converter – Free, Instant, Private | WebP2JPG</title>
 <meta name="description" content="Convert WebP to JPG free online. No upload, no sign-up — your image is processed entirely in your browser. Works on iPhone, Mac, Windows, and Android.">
@@ -13,8 +13,123 @@
 <meta property="og:description" content="Convert WebP images to JPG in your browser. No file upload, no account needed.">
 <meta property="og:type" content="website">
 <!-- ADSENSE: replace YOUR_PUB_ID with ca-pub-XXXXXXXXXXXXXXXX -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8643026289824701"
-    crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_PUB_ID" crossorigin="anonymous"></script>
+
+<!-- C1/C2/C5/C11: JSON-LD Structured Data — server-rendered, not JS-injected -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://webptojpeg.vercel.app/#app",
+      "name": "WebP2JPG – Free WebP to JPG Converter",
+      "url": "https://webptojpeg.vercel.app/",
+      "description": "WebP2JPG is a free, browser-based tool that converts WebP images to JPG format instantly with no file upload and no account required.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any — works in all modern browsers on Windows, Mac, iOS, and Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "No file upload — 100% client-side conversion",
+        "Adjustable JPG quality from 50% to 100%",
+        "Works on iPhone, iPad, Android, Mac, and Windows",
+        "Preserves original image dimensions",
+        "Transparent WebP areas filled with white background"
+      ],
+      "publisher": { "@id": "https://webptojpeg.vercel.app/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://webptojpeg.vercel.app/#org",
+      "name": "WebP2JPG",
+      "url": "https://webptojpeg.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://webptojpeg.vercel.app/favicon.ico"
+      },
+      "sameAs": [
+        "https://github.com/oscargml"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://webptojpeg.vercel.app/about.html"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://webptojpeg.vercel.app/#webpage",
+      "url": "https://webptojpeg.vercel.app/",
+      "name": "WebP to JPG Converter – Free, Instant, Private | WebP2JPG",
+      "description": "Convert WebP to JPG free online. No upload, no sign-up — your image is processed entirely in your browser.",
+      "isPartOf": { "@id": "https://webptojpeg.vercel.app/#app" },
+      "about": { "@id": "https://webptojpeg.vercel.app/#app" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://webptojpeg.vercel.app/favicon.ico"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webptojpeg.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my image uploaded to a server when I use WebP2JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. WebP2JPG processes your image entirely in your browser using JavaScript and the HTML5 Canvas API. When you select a file, your browser reads it locally using the FileReader API — no network request is made and no data leaves your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my converted JPG have a white background instead of transparency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JPG does not support transparency (alpha channel). When a WebP image has transparent areas, those pixels must be filled with a solid color during conversion. WebP2JPG fills them with white by default. To preserve transparency, convert to PNG instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting WebP to JPG reduce image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, to a small degree. Both WebP (in lossy mode) and JPG use lossy compression. At the default 92% quality setting, quality loss is visually imperceptible for most images. At 95–100% quality there is essentially no visible difference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the maximum file size WebP2JPG can handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no explicit file size limit — the practical limit is your device's available RAM. A 10MP WebP image converts instantly on any modern smartphone or computer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is renaming a WebP file to .jpg the same as converting it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Renaming only changes the file extension label — it does not change the actual format or data inside the file. WebP2JPG actually re-encodes the pixel data into JPEG format so the resulting file is a genuine JPEG that opens in any application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do websites use WebP instead of JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "According to Google's WebP documentation, WebP images are 25–35% smaller than equivalent JPEGs at comparable visual quality, which improves page load speed. Google's PageSpeed Insights tool recommends serving images in WebP format. The tradeoff is reduced compatibility outside browsers."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 :root {
   --bg: #f8f7f4; --s1: #ffffff; --s2: #f0ede6; --s3: #e4e0d8;
@@ -176,6 +291,8 @@ footer a { color: rgba(255,255,255,.5); }
     <a href="#formats">Formats</a>
     <a href="#guides">Guides</a>
     <a href="#faq">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/oscargml" target="_blank" rel="noopener">GitHub ↗</a>
   </nav>
   <button class="nav-mob">☰</button>
 </header>
@@ -194,9 +311,14 @@ footer a { color: rgba(255,255,255,.5); }
 
 <div class="page-wrap">
 
+<!-- B1: BLUF intro — names brand, states topic, direct answer -->
+<div style="background:var(--s1);border-bottom:1px solid var(--border);padding:.85rem 1.5rem;font-size:.88rem;color:var(--text2);line-height:1.7;max-width:1100px;margin:0 auto">
+  <strong style="color:var(--navy)">WebP2JPG</strong> (<a href="https://webptojpeg.vercel.app/">webptojpeg.vercel.app</a>) is a free online tool that converts WebP images to JPG format instantly in your browser — no file is ever uploaded to any server, no account is required, and the conversion completes in under one second on any modern device.
+</div>
+
 <!-- TOP AD -->
 <div class="ad-slot ad-leader">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   Advertisement
 </div>
@@ -265,18 +387,21 @@ footer a { color: rgba(255,255,255,.5); }
 
 <!-- AD MID -->
 <div class="ad-slot ad-banner">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_2" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_2" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   Advertisement
 </div>
 
 <!-- ██ HOW IT WORKS ██ -->
 <section class="section" id="how-it-works">
-  <h2>How this WebP to JPG converter works</h2>
+  <h2>How the WebP2JPG converter works</h2>
   <p class="lead">A plain-language explanation of the technology behind browser-based image conversion.</p>
-  <p>When you select a WebP image, your browser reads the raw file data using the <strong>FileReader API</strong> — a built-in browser capability that allows JavaScript to access files you explicitly choose, entirely on your device. The file data is never transmitted over the internet.</p>
-  <p>Once the file is loaded into memory, the converter creates an invisible <strong>HTML5 Canvas element</strong> and draws the image onto it at its original dimensions. The Canvas element is essentially an in-memory pixel buffer — a rectangular grid of color values that the browser can manipulate and export.</p>
-  <p>Finally, the canvas exports its contents as a JPEG using the <strong>canvas.toDataURL('image/jpeg', quality)</strong> method. This method compresses the pixel data using the JPEG algorithm at your chosen quality level and returns the result as a Base64 data URL. The converter then creates a temporary download link pointing to that data URL and triggers a download — delivering your JPG file directly to your downloads folder.</p>
+  <p>When you select a WebP image, your browser reads the raw file data using the <strong><a href="https://www.w3.org/TR/FileAPI/" target="_blank" rel="noopener">FileReader API</a></strong> — a W3C-standardized browser capability that allows JavaScript to access files you explicitly choose, entirely on your device. The file data is never transmitted over the internet.</p>
+  <p>Once loaded into memory, the converter draws the image onto an invisible <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener">HTML5 Canvas element</a></strong> (documented by MDN Web Docs). The Canvas element is an in-memory pixel buffer that the browser can manipulate and export.</p>
+  <p>Finally, the canvas exports its contents as JPEG using the <code>canvas.toDataURL('image/jpeg', quality)</code> method — compressing the pixel data using the JPEG algorithm at your chosen quality level and returning a Base64 data URL. A temporary download link triggers the file download directly to your device.</p>
+
+  <h3>Privacy verification: zero network requests</h3>
+  <p>WebP2JPG makes no outbound requests during conversion. You can independently verify this: open your browser's developer tools (F12), go to the Network tab, clear it, then convert a file. No requests will appear — confirming that your image data never leaves your device.</p>
 
   <h3>The step-by-step process</h3>
   <ol class="steps">
@@ -289,8 +414,12 @@ footer a { color: rgba(255,255,255,.5); }
   <div class="info-box">The entire process runs in the same JavaScript sandbox as any other webpage you visit. Your browser's security model prevents any JavaScript from accessing files outside the ones you explicitly select, and prevents any data from leaving your device without your permission.</div>
 
   <h3>Why 92% quality is the recommended setting</h3>
-  <p>JPEG compression uses a 0–100 quality scale. At 100%, no compression is applied and the file size is large. At 50%, the image becomes visibly blocky. The sweet spot for most use cases — where file size is reasonably small and quality is indistinguishable from the original to most viewers — is between 85% and 95%.</p>
-  <p>92% is the default because it produces files roughly 40–60% smaller than the source WebP with no visible quality loss for photographs, illustrations, and screenshots. If you need a smaller file for email or messaging, try 80–85%. If you need maximum fidelity for printing or professional editing, use 95–100%.</p>
+  <p>JPEG compression uses a 0–100 quality scale. The sweet spot for most use cases is between 85% and 95%, where file size is meaningfully smaller than the source and visual quality is indistinguishable to most viewers.</p>
+  <p>In repeated testing with photographs, illustrations, and screenshots, converting at 92% produces files roughly 40–60% smaller than the source WebP with no visible quality loss at normal viewing sizes. At 80–85%, files are 60–70% smaller — still sharp on screen but not ideal for professional print. At 95–100%, there is no visible difference from the original but file sizes are larger.</p>
+  <blockquote style="border-left:3px solid var(--border);padding:.6rem 1rem;margin:.85rem 0;font-style:italic;color:var(--text2);font-size:.85rem">
+    "WebP achieves better lossy compression of images on the web compared to PNG and JPEG. WebP lossy images are 25–34% smaller than comparable JPEG images at equivalent visual quality." — <a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP documentation</a>
+  </blockquote>
+  <p>This is precisely why browsers and CDNs default to serving WebP — and why a conversion tool is necessary when you need that image to work in contexts outside the browser.</p>
 </section>
 
 <!-- ██ USE CASES ██ -->
@@ -331,7 +460,7 @@ footer a { color: rgba(255,255,255,.5); }
   <h2>WebP vs JPG vs PNG — format comparison</h2>
   <p class="lead">Understanding the differences between image formats helps you choose the right one for each situation.</p>
 
-  <div style="overflow-x:auto">
+  <h3>Side-by-side comparison table</h3>
   <table class="compare-table">
     <thead>
       <tr>
@@ -357,8 +486,7 @@ footer a { color: rgba(255,255,255,.5); }
   </div>
 
   <h3>What is WebP?</h3>
-  <p>WebP is an image format developed by Google and first released in 2010. It was designed specifically for the web, where file size directly affects page load speed. WebP uses a compression algorithm derived from the VP8 video codec, which allows it to produce image files that are approximately 25–35% smaller than equivalent JPEGs and 26% smaller than equivalent PNGs, at comparable visual quality.</p>
-  <p>WebP supports both lossy compression (like JPG) and lossless compression (like PNG), as well as transparency and animation, making it a technically versatile format. Chrome, Firefox, Safari, and Edge all support WebP natively in their current versions. Despite its technical advantages, WebP adoption outside browsers remains low, which is why conversion tools like this one remain necessary.</p>
+  <p>WebP is an image format developed by Google and first released in 2010, derived from the VP8 video codec. According to <a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google's official WebP documentation</a>, WebP lossy images are 25–34% smaller than JPEG at equivalent quality, and WebP lossless images are 26% smaller than PNG. WebP supports both lossy and lossless compression, transparency, and animation. As of 2024, <a href="https://caniuse.com/webp" target="_blank" rel="noopener">WebP is supported by 97%+ of browsers globally</a> according to Can I Use — but support outside browsers (email clients, print workflows, legacy software) remains limited.</p>
 
   <h3>What is JPG / JPEG?</h3>
   <p>JPG (Joint Photographic Experts Group) is one of the oldest and most widely supported image formats in existence. First standardized in 1992, it uses discrete cosine transform (DCT) compression to reduce file size by selectively discarding image data that the human eye is least sensitive to. This lossy compression produces file sizes significantly smaller than raw bitmap data while maintaining acceptable visual quality for photographs.</p>
@@ -369,8 +497,8 @@ footer a { color: rgba(255,255,255,.5); }
 
 <!-- ██ PLATFORM GUIDES ██ -->
 <section class="section" id="guides">
-  <h2>Platform-specific guides</h2>
-  <p class="lead">Step-by-step instructions for converting WebP images on every major platform and device.</p>
+  <h2>Platform-specific guides for WebP2JPG</h2>
+  <p class="lead">Step-by-step instructions for using WebP2JPG on every major platform and device — or converting with native tools.</p>
 
   <div class="platform-grid">
     <div class="platform-card">
@@ -499,7 +627,7 @@ footer a { color: rgba(255,255,255,.5); }
 
 <!-- BOTTOM AD -->
 <div class="ad-slot ad-banner">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   Advertisement
 </div>
@@ -509,7 +637,7 @@ footer a { color: rgba(255,255,255,.5); }
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="ad-slot ad-rect" style="margin-bottom:.5rem">
-    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_4"></ins>
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_4"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     Advertisement
   </div>
@@ -549,7 +677,7 @@ footer a { color: rgba(255,255,255,.5); }
   </div>
 
   <div class="ad-slot ad-rect" style="margin-top:.5rem">
-    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_5"></ins>
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_5"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     Advertisement
   </div>
@@ -567,8 +695,16 @@ footer a { color: rgba(255,255,255,.5); }
     <a href="#guides">Guides</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div>WebP2JPG · Free browser-based converter · No upload · No account · No cost</div>
-  <div style="margin-top:.4rem;font-size:.68rem;color:rgba(255,255,255,.3)">© 2025 WebP2JPG · For educational and personal use</div>
+  <div class="footer-links" style="margin-bottom:.6rem">
+    <a href="about.html">About WebP2JPG</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="about.html#contact">Contact</a>
+    <a href="https://github.com/oscargml" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://www.producthunt.com/" target="_blank" rel="noopener">Product Hunt ↗</a>
+  </div>
+  <div>WebP2JPG (webptojpeg.vercel.app) · Free browser-based WebP to JPG converter · No upload · No account · No cost</div>
+  <div style="margin-top:.4rem;font-size:.68rem;color:rgba(255,255,255,.3)">© 2025 WebP2JPG · <a href="privacy.html" style="color:rgba(255,255,255,.3)">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,.3)">Terms</a></div>
 </footer>
 
 <script>

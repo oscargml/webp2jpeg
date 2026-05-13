@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About WebP2JPG – Free Browser-Based Image Converter</title>
+<meta name="description" content="WebP2JPG is a free, privacy-first image converter built to convert WebP files to JPG entirely in your browser. No uploads, no accounts, no cost.">
+<link rel="canonical" href="https://webptojpeg.vercel.app/about.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About WebP2JPG",
+  "url": "https://webptojpeg.vercel.app/about.html",
+  "description": "About WebP2JPG — a free, browser-based WebP to JPG converter that processes images locally with no file upload.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "WebP2JPG",
+    "url": "https://webptojpeg.vercel.app/"
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#1a1a1e;line-height:1.7}
+a{color:#2563eb}
+header{background:#1a2744;padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;font-size:1.1rem;font-weight:700;text-decoration:none}
+.back{color:rgba(255,255,255,.7);font-size:.85rem;text-decoration:none}
+.back:hover{color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem}
+h1{font-size:1.8rem;color:#1a2744;margin-bottom:.5rem}
+h2{font-size:1.2rem;color:#1a2744;margin:1.75rem 0 .5rem}
+p{color:#4a4858;font-size:.92rem;margin-bottom:.75rem}
+ul{color:#4a4858;font-size:.92rem;padding-left:1.25rem;margin-bottom:.75rem}
+ul li{margin-bottom:.3rem}
+.contact-box{background:#fff;border:1px solid #ddd8ce;border-radius:8px;padding:1.25rem;margin-top:1rem}
+.contact-box a{display:block;margin-bottom:.4rem;font-size:.88rem}
+footer{background:#1a2744;color:rgba(255,255,255,.5);text-align:center;padding:1.25rem;font-size:.72rem;margin-top:3rem}
+footer a{color:rgba(255,255,255,.5);margin:0 .5rem}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">WebP2JPG</a>
+  <a href="/" class="back">← Back to converter</a>
+</header>
+
+<div class="wrap">
+  <h1>About WebP2JPG</h1>
+  <p><strong>WebP2JPG</strong> (<a href="https://webptojpeg.vercel.app/">webptojpeg.vercel.app</a>) is a free, browser-based tool that converts WebP image files to JPG format. It was built to solve a common friction point: websites increasingly serve images in the WebP format for performance reasons, but many everyday workflows — email, printing, form uploads, legacy software — still require JPG.</p>
+
+  <h2>What makes WebP2JPG different</h2>
+  <p>Most online image converters upload your file to a remote server, process it there, and send back the result. WebP2JPG takes a different approach: the entire conversion happens locally in your browser using the HTML5 Canvas API and the W3C FileReader API. Your image never leaves your device.</p>
+  <ul>
+    <li><strong>Zero uploads</strong> — your file is never sent to any server</li>
+    <li><strong>No account required</strong> — open the page and convert immediately</li>
+    <li><strong>No file size limits</strong> — bounded only by your device's RAM</li>
+    <li><strong>Free forever</strong> — supported by non-intrusive display advertising</li>
+    <li><strong>Open source technology</strong> — built on standard W3C browser APIs</li>
+  </ul>
+
+  <h2>How it's built</h2>
+  <p>WebP2JPG is a static HTML/JavaScript application with no server-side backend. It uses three standard browser APIs: the <strong>FileReader API</strong> (W3C specification) to read the selected file, the <strong>Canvas API</strong> to decode and re-encode pixel data, and the <strong>Blob/Data URL API</strong> to trigger a file download. The source code can be inspected via your browser's developer tools — there is nothing hidden.</p>
+  <p>The project is maintained by Oscar Gabriel Mora López. Related tools and projects are available on <a href="https://github.com/oscargml" target="_blank" rel="noopener">GitHub (oscargml)</a>.</p>
+
+  <h2>Privacy commitment</h2>
+  <p>WebP2JPG does not collect, store, or transmit any image data. The only external requests the page makes are for Google Fonts (typography) and Google AdSense (advertising). No analytics SDKs, no tracking pixels, no session recording. See the full <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>For questions, bug reports, or feedback about WebP2JPG:</p>
+  <div class="contact-box">
+    <a href="https://github.com/oscargml" target="_blank" rel="noopener">GitHub: github.com/oscargml</a>
+    <a href="/">webptojpeg.vercel.app</a>
+  </div>
+
+  <h2>Related tools</h2>
+  <ul>
+    <li><a href="/">WebP to JPG Converter</a> — this tool</li>
+    <li><a href="#formats">WebP vs JPG vs PNG format comparison</a></li>
+    <li><a href="#guides">Platform-specific conversion guides</a></li>
+  </ul>
+</div>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+  <a href="about.html">About</a>
+  <br><br>© 2025 WebP2JPG · webptojpeg.vercel.app
+</footer>
+</body>
+</html>
